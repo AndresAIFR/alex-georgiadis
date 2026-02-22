@@ -473,6 +473,196 @@
             color: var(--charcoal);
         }
 
+        /* COLLAPSIBLE SECTIONS */
+        .collapsible-header {
+            display: flex; align-items: center; justify-content: space-between;
+            cursor: pointer; user-select: none;
+            padding-bottom: 0.5rem;
+        }
+
+        .collapsible-header:hover .collapse-icon {
+            color: var(--amber);
+        }
+
+        .collapse-icon {
+            width: 28px; height: 28px; flex-shrink: 0;
+            color: var(--warm-gray-light);
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s;
+        }
+
+        .collapsible-body {
+            overflow: hidden;
+            transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
+            max-height: 3000px; opacity: 1;
+        }
+
+        .section-collapsed .collapsible-body {
+            max-height: 0; opacity: 0;
+        }
+
+        .section-collapsed .collapse-icon {
+            transform: rotate(-90deg);
+        }
+
+        .collapse-hint {
+            display: none;
+            font-size: 0.7rem; font-weight: 400; letter-spacing: 0.08em;
+            text-transform: uppercase; color: var(--warm-gray-light);
+            margin-left: auto; margin-right: 0.75rem;
+        }
+
+        .section-collapsed .collapse-hint { display: inline; }
+
+        /* PROGRESS BAR */
+        .progress-wrap {
+            margin-bottom: 2rem;
+        }
+
+        .progress-bar-outer {
+            width: 100%; height: 6px; border-radius: 3px;
+            background: rgba(28, 26, 23, 0.08);
+            overflow: hidden;
+        }
+
+        .progress-bar-inner {
+            height: 100%; border-radius: 3px;
+            background: linear-gradient(90deg, var(--green), var(--green-light));
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 0%;
+        }
+
+        .progress-text {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-top: 0.5rem;
+        }
+
+        .progress-label {
+            font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em;
+            text-transform: uppercase; color: var(--warm-gray-light);
+        }
+
+        .progress-count {
+            font-size: 0.72rem; font-weight: 500; color: var(--green);
+        }
+
+        /* ACTION CHECKBOXES */
+        .action-check {
+            appearance: none; -webkit-appearance: none;
+            width: 22px; height: 22px; border-radius: 50%;
+            border: 2px solid rgba(28, 26, 23, 0.15);
+            background: var(--cream);
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s;
+            flex-shrink: 0;
+            margin-top: 0.15rem;
+        }
+
+        .action-check:hover {
+            border-color: var(--green);
+        }
+
+        .action-check:checked {
+            background: var(--green);
+            border-color: var(--green);
+        }
+
+        .action-check:checked::after {
+            content: '';
+            position: absolute;
+            left: 6px; top: 3px;
+            width: 5px; height: 9px;
+            border: solid white; border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .action-item.completed .action-content h4 {
+            text-decoration: line-through;
+            color: var(--warm-gray-light);
+        }
+
+        .action-item.completed .action-content p {
+            opacity: 0.5;
+        }
+
+        /* COPY BUTTON */
+        .copy-btn {
+            position: absolute; top: 1rem; right: 1rem;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 6px; padding: 0.4rem 0.7rem;
+            cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em;
+            text-transform: uppercase; color: rgba(255,255,255,0.5);
+            transition: all 0.3s;
+        }
+
+        .copy-btn:hover {
+            background: rgba(255,255,255,0.12);
+            color: var(--amber-light);
+            border-color: var(--amber);
+        }
+
+        .copy-btn.copied {
+            color: var(--green-light) !important;
+            border-color: var(--green) !important;
+        }
+
+        .copy-btn svg { width: 12px; height: 12px; }
+
+        .copy-btn-light {
+            position: absolute; top: 0.75rem; right: 0.75rem;
+            background: rgba(28, 26, 23, 0.04);
+            border: 1px solid rgba(28, 26, 23, 0.08);
+            border-radius: 6px; padding: 0.4rem 0.7rem;
+            cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em;
+            text-transform: uppercase; color: var(--warm-gray-light);
+            transition: all 0.3s;
+        }
+
+        .copy-btn-light:hover {
+            background: rgba(28, 26, 23, 0.08);
+            color: var(--amber);
+            border-color: var(--amber);
+        }
+
+        .copy-btn-light.copied {
+            color: var(--green) !important;
+            border-color: var(--green) !important;
+        }
+
+        .copy-btn-light svg { width: 12px; height: 12px; }
+
+        /* SEARCH TERM LINKS */
+        .search-links {
+            display: flex; gap: 0.5rem; margin-left: auto;
+        }
+
+        .search-link {
+            display: inline-flex; align-items: center; gap: 0.3rem;
+            padding: 0.25rem 0.6rem; border-radius: 3px;
+            font-size: 0.6rem; font-weight: 600; letter-spacing: 0.08em;
+            text-transform: uppercase; text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .search-link.linkedin {
+            color: #0a66c2; background: rgba(10, 102, 194, 0.08);
+        }
+        .search-link.linkedin:hover {
+            background: rgba(10, 102, 194, 0.15);
+        }
+
+        .search-link.indeed {
+            color: #2164f3; background: rgba(33, 100, 243, 0.08);
+        }
+        .search-link.indeed:hover {
+            background: rgba(33, 100, 243, 0.15);
+        }
+
         /* FOOTER */
         footer {
             background: var(--charcoal-deep);
@@ -503,6 +693,8 @@
             .cert-rank { margin: 0 auto; }
             .cert-meta { text-align: center; }
             .action-item { grid-template-columns: 1fr; gap: 0.75rem; }
+            .search-term { flex-wrap: wrap; }
+            .search-links { margin-left: 0; margin-top: 0.5rem; width: 100%; }
         }
 
         @media (max-width: 480px) {
@@ -614,10 +806,17 @@
     </section>
 
     <!-- WHAT OPS ACTUALLY IS -->
-    <section class="bg-cream">
+    <section class="bg-cream section-collapsed" data-collapsible>
         <div class="section-inner">
-            <p class="section-label">The Big Picture</p>
-            <h2 class="section-title">What "Operations" actually means</h2>
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <div>
+                    <p class="section-label">The Big Picture</p>
+                    <h2 class="section-title">What "Operations" actually means</h2>
+                </div>
+                <span class="collapse-hint">Click to expand</span>
+                <svg class="collapse-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="collapsible-body">
             <p class="section-desc">You said you don't know what ops is "besides essentially middle management." Here's the real answer&mdash;it's broader than you think, and it's exactly what you're built for.</p>
 
             <div style="font-size: 0.95rem; color: var(--warm-gray); line-height: 1.9; max-width: 750px;">
@@ -628,6 +827,7 @@
                 <p style="margin-bottom: 1.25rem;"><strong style="color: var(--charcoal);">What all ops roles have in common:</strong> You're the person who makes things run smoothly. You coordinate between departments. You solve problems before they blow up. You manage vendors and budgets. You keep teams organized and productive.</p>
 
                 <p><strong style="color: var(--charcoal);">Sound familiar?</strong> That's because you've been doing this for 20 years. You just did it in kitchens and dining rooms instead of corporate offices.</p>
+            </div>
             </div>
         </div>
     </section>
@@ -686,16 +886,24 @@
             <h2 class="section-title">Your 30-second pitch</h2>
             <p class="section-desc">When someone asks "so what do you do?" or "tell me about yourself"&mdash;this is what you say. Notice: no mention of food, restaurants, or hospitality in the opening.</p>
 
-            <div class="pitch-box">
-                <p>
+            <div class="pitch-box" id="pitchBox">
+                <button class="copy-btn" onclick="copyBlock('pitchText', this)" title="Copy to clipboard">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                    <span>Copy</span>
+                </button>
+                <p id="pitchText">
                     <span class="pitch-label">Memorize this</span>
                     You know those popup lunch programs you see in corporate office buildings? I'm the guy who runs five of those simultaneously&mdash;managing the vendors, the logistics, the budgets, the staff. I've been running complex operations like this for 20 years, coordinating vendors, staffing five sites, keeping budgets on track. I'm looking to bring that same operational discipline into a corporate operations or facilities role. I'm also fully bilingual in English and Spanish, which has been a real asset managing diverse teams and vendor relationships.
                 </p>
             </div>
 
-            <div style="margin-top: 2rem; padding: 1.5rem 2rem; background: var(--ivory); border-radius: 4px;">
+            <div style="margin-top: 2rem; padding: 1.5rem 2rem; background: var(--ivory); border-radius: 4px; position: relative;">
+                <button class="copy-btn-light" onclick="copyBlock('linkedinText', this)" title="Copy to clipboard">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                    <span>Copy</span>
+                </button>
                 <p style="font-size: 0.85rem; color: var(--warm-gray); line-height: 1.7; margin-bottom: 0.75rem;"><strong style="color: var(--charcoal);">Your LinkedIn headline should be:</strong></p>
-                <p style="font-size: 1rem; color: var(--charcoal); font-weight: 500;">Operations &amp; Logistics | 20 Years Multi-Site Management | Vendor Relations | Bilingual EN/ES</p>
+                <p id="linkedinText" style="font-size: 1rem; color: var(--charcoal); font-weight: 500;">Operations &amp; Logistics | 20 Years Multi-Site Management | Vendor Relations | Bilingual EN/ES</p>
                 <p style="font-size: 0.78rem; color: var(--warm-gray); margin-top: 0.5rem;">Not "Restaurant Manager looking for new opportunities." That screams "I can't translate my skills." And skip "Leader"&mdash;if you're targeting coordinator roles, "Leader" in the headline sets the wrong expectation.</p>
             </div>
         </div>
@@ -876,10 +1084,17 @@
     </section>
 
     <!-- SOFTWARE YOU NEED TO KNOW -->
-    <section class="bg-cream">
+    <section class="bg-cream section-collapsed" data-collapsible>
         <div class="section-inner">
-            <p class="section-label">The Gap Nobody Mentions</p>
-            <h2 class="section-title">Software you need to know</h2>
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <div>
+                    <p class="section-label">The Gap Nobody Mentions</p>
+                    <h2 class="section-title">Software you need to know</h2>
+                </div>
+                <span class="collapse-hint">Click to expand</span>
+                <svg class="collapse-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="collapsible-body">
             <p class="section-desc">Real ops job postings list specific software. You don't need to be an expert&mdash;you need to not draw a blank when asked. Here's what actually shows up in postings.</p>
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 1.5rem;">
@@ -899,6 +1114,7 @@
 
             <div style="margin-top: 1.5rem; padding: 1.25rem 1.5rem; background: var(--ivory); border-radius: 4px;">
                 <p style="font-size: 0.82rem; color: var(--warm-gray); line-height: 1.6;"><strong style="color: var(--charcoal);">Don't panic.</strong> Most coordinator job postings require only a high school diploma and 1-3 years admin/office experience. You won't be expected to be a software expert. But knowing the names and having watched a tutorial puts you ahead of other career changers who draw a blank.</p>
+            </div>
             </div>
         </div>
     </section>
@@ -946,10 +1162,17 @@
     </section>
 
     <!-- RESUME & ATS -->
-    <section class="bg-cream">
+    <section class="bg-cream section-collapsed" data-collapsible>
         <div class="section-inner">
-            <p class="section-label">Getting Past the Robots</p>
-            <h2 class="section-title">Your resume needs to beat the ATS</h2>
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <div>
+                    <p class="section-label">Getting Past the Robots</p>
+                    <h2 class="section-title">Your resume needs to beat the ATS</h2>
+                </div>
+                <span class="collapse-hint">Click to expand</span>
+                <svg class="collapse-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="collapsible-body">
             <p class="section-desc">99.7% of recruiters use Applicant Tracking Systems (ATS) to filter resumes by keywords. If your resume says "restaurant manager," it gets auto-rejected for "operations coordinator" roles. Here's how to fix that.</p>
 
             <div style="font-size: 0.95rem; color: var(--warm-gray); line-height: 1.9; max-width: 750px;">
@@ -958,14 +1181,22 @@
                 <p style="margin-bottom: 1.25rem;"><strong style="color: var(--charcoal);">Use standard section headers.</strong> "Work Experience" (not "My Career Journey"). "Skills" (not "What I Bring"). "Education" (not "Learning"). ATS software looks for these exact labels.</p>
                 <p><strong style="color: var(--charcoal);">Keep it simple.</strong> No columns, no tables, no graphics, no fancy fonts. Plain formatting, bullet points, standard fonts (Calibri, Garamond, Arial). The prettier your resume, the worse the ATS reads it.</p>
             </div>
+            </div>
         </div>
     </section>
 
     <!-- NETWORKING & PROFESSIONAL ASSOCIATIONS -->
-    <section class="bg-ivory">
+    <section class="bg-ivory section-collapsed" data-collapsible>
         <div class="section-inner">
-            <p class="section-label">The Real Secret</p>
-            <h2 class="section-title">Networking beats applications 4-to-1</h2>
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <div>
+                    <p class="section-label">The Real Secret</p>
+                    <h2 class="section-title">Networking beats applications 4-to-1</h2>
+                </div>
+                <span class="collapse-hint">Click to expand</span>
+                <svg class="collapse-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="collapsible-body">
             <p class="section-desc">Cold applications convert at 2-5%. Referrals convert at 4x that rate. For a career changer, who you know matters more than what you apply to.</p>
 
             <div style="font-size: 0.95rem; color: var(--warm-gray); line-height: 1.9; max-width: 750px; margin-bottom: 2rem;">
@@ -984,14 +1215,22 @@
                     <p style="font-size: 0.85rem; color: var(--warm-gray); line-height: 1.6;">Building Owners and Managers Association. $250/yr direct membership. More employer-focused (building owners, property managers) but great for networking into facilities roles at the companies that actually hire coordinators.</p>
                 </div>
             </div>
+            </div>
         </div>
     </section>
 
     <!-- INTERVIEW PREP -->
-    <section class="bg-cream">
+    <section class="bg-cream section-collapsed" data-collapsible>
         <div class="section-inner">
-            <p class="section-label">In the Room</p>
-            <h2 class="section-title">How to handle the hard interview questions</h2>
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <div>
+                    <p class="section-label">In the Room</p>
+                    <h2 class="section-title">How to handle the hard interview questions</h2>
+                </div>
+                <span class="collapse-hint">Click to expand</span>
+                <svg class="collapse-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="collapsible-body">
             <p class="section-desc">The skills table gets you in the door. These answers keep you in the room.</p>
 
             <div style="font-size: 0.95rem; color: var(--warm-gray); line-height: 1.9; max-width: 750px;">
@@ -1000,14 +1239,22 @@
                 <p style="margin-bottom: 1.5rem;"><strong style="color: var(--charcoal);">"Tell me about a time you..."</strong><br>Use the STAR method: Situation, Task, Action, Result. Keep stories to 90 seconds. Every answer should include a number (5 sites, 15 vendors, $X budget, 20 staff). Numbers make stories real. Prep 5-6 STAR stories before any interview.</p>
                 <p><strong style="color: var(--charcoal);">Interview language tip:</strong> In interviews, say "I ran" and "I managed"&mdash;not "I directed multi-site operations." The corporate language is for your resume. In conversation, be natural and specific. Tell the story, then let the interviewer connect it to their world.</p>
             </div>
+            </div>
         </div>
     </section>
 
     <!-- TARGET COMPANIES -->
-    <section class="bg-ivory">
+    <section class="bg-ivory section-collapsed" data-collapsible>
         <div class="section-inner">
-            <p class="section-label">Where to Look</p>
-            <h2 class="section-title">Companies hiring in DC-Baltimore</h2>
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <div>
+                    <p class="section-label">Where to Look</p>
+                    <h2 class="section-title">Companies hiring in DC-Baltimore</h2>
+                </div>
+                <span class="collapse-hint">Click to expand</span>
+                <svg class="collapse-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="collapsible-body">
             <p class="section-desc">These companies specifically value your background. Start with the first two categories&mdash;they're the easiest lateral moves.</p>
 
             <div class="company-section">
@@ -1065,6 +1312,7 @@
                     <span class="company-tag">Cushman & Wakefield</span>
                 </div>
             </div>
+            </div>
         </div>
     </section>
 
@@ -1076,37 +1324,69 @@
             <p class="section-desc">Don't just search "operations jobs." Use these specific queries. Click to copy.</p>
 
             <div class="search-terms">
-                <div class="search-term" onclick="copySearch(this)">
-                    "operations coordinator" NOT IT NOT software
+                <div class="search-term" onclick="copySearch(this)" data-query="operations coordinator NOT IT NOT software">
+                    <span class="search-query">"operations coordinator" NOT IT NOT software</span>
                     <span class="search-copied">Copied</span>
+                    <span class="search-links" onclick="event.stopPropagation()">
+                        <a class="search-link linkedin" href="https://www.linkedin.com/jobs/search/?keywords=%22operations+coordinator%22&location=Baltimore-Washington+Area" target="_blank" rel="noopener">LinkedIn</a>
+                        <a class="search-link indeed" href="https://www.indeed.com/jobs?q=%22operations+coordinator%22&l=Baltimore%2C+MD" target="_blank" rel="noopener">Indeed</a>
+                    </span>
                 </div>
-                <div class="search-term" onclick="copySearch(this)">
-                    "facilities coordinator" -engineering
+                <div class="search-term" onclick="copySearch(this)" data-query="facilities coordinator -engineering">
+                    <span class="search-query">"facilities coordinator" -engineering</span>
                     <span class="search-copied">Copied</span>
+                    <span class="search-links" onclick="event.stopPropagation()">
+                        <a class="search-link linkedin" href="https://www.linkedin.com/jobs/search/?keywords=%22facilities+coordinator%22&location=Baltimore-Washington+Area" target="_blank" rel="noopener">LinkedIn</a>
+                        <a class="search-link indeed" href="https://www.indeed.com/jobs?q=%22facilities+coordinator%22&l=Baltimore%2C+MD" target="_blank" rel="noopener">Indeed</a>
+                    </span>
                 </div>
-                <div class="search-term" onclick="copySearch(this)">
-                    "vendor management" OR "procurement" coordinator
+                <div class="search-term" onclick="copySearch(this)" data-query="vendor management OR procurement coordinator">
+                    <span class="search-query">"vendor management" OR "procurement" coordinator</span>
                     <span class="search-copied">Copied</span>
+                    <span class="search-links" onclick="event.stopPropagation()">
+                        <a class="search-link linkedin" href="https://www.linkedin.com/jobs/search/?keywords=%22vendor+management%22+coordinator&location=Baltimore-Washington+Area" target="_blank" rel="noopener">LinkedIn</a>
+                        <a class="search-link indeed" href="https://www.indeed.com/jobs?q=%22vendor+management%22+coordinator&l=Washington%2C+DC" target="_blank" rel="noopener">Indeed</a>
+                    </span>
                 </div>
-                <div class="search-term" onclick="copySearch(this)">
-                    "multi-site" operations manager Maryland
+                <div class="search-term" onclick="copySearch(this)" data-query="multi-site operations manager Maryland">
+                    <span class="search-query">"multi-site" operations manager Maryland</span>
                     <span class="search-copied">Copied</span>
+                    <span class="search-links" onclick="event.stopPropagation()">
+                        <a class="search-link linkedin" href="https://www.linkedin.com/jobs/search/?keywords=%22multi-site%22+operations+manager&location=Maryland" target="_blank" rel="noopener">LinkedIn</a>
+                        <a class="search-link indeed" href="https://www.indeed.com/jobs?q=%22multi-site%22+operations+manager&l=Maryland" target="_blank" rel="noopener">Indeed</a>
+                    </span>
                 </div>
-                <div class="search-term" onclick="copySearch(this)">
-                    "logistics coordinator" -CDL -driver Baltimore OR DC
+                <div class="search-term" onclick="copySearch(this)" data-query="logistics coordinator -CDL -driver Baltimore OR DC">
+                    <span class="search-query">"logistics coordinator" -CDL -driver Baltimore OR DC</span>
                     <span class="search-copied">Copied</span>
+                    <span class="search-links" onclick="event.stopPropagation()">
+                        <a class="search-link linkedin" href="https://www.linkedin.com/jobs/search/?keywords=%22logistics+coordinator%22&location=Baltimore-Washington+Area" target="_blank" rel="noopener">LinkedIn</a>
+                        <a class="search-link indeed" href="https://www.indeed.com/jobs?q=%22logistics+coordinator%22+-CDL+-driver&l=Baltimore%2C+MD" target="_blank" rel="noopener">Indeed</a>
+                    </span>
                 </div>
-                <div class="search-term" onclick="copySearch(this)">
-                    "operations coordinator" "bilingual" OR "Spanish" Washington DC
+                <div class="search-term" onclick="copySearch(this)" data-query="operations coordinator bilingual Spanish Washington DC">
+                    <span class="search-query">"operations coordinator" "bilingual" OR "Spanish" Washington DC</span>
                     <span class="search-copied">Copied</span>
+                    <span class="search-links" onclick="event.stopPropagation()">
+                        <a class="search-link linkedin" href="https://www.linkedin.com/jobs/search/?keywords=%22operations+coordinator%22+bilingual+Spanish&location=Washington+DC" target="_blank" rel="noopener">LinkedIn</a>
+                        <a class="search-link indeed" href="https://www.indeed.com/jobs?q=%22operations+coordinator%22+bilingual+Spanish&l=Washington%2C+DC" target="_blank" rel="noopener">Indeed</a>
+                    </span>
                 </div>
-                <div class="search-term" onclick="copySearch(this)">
-                    "property management" assistant OR coordinator Baltimore OR DC
+                <div class="search-term" onclick="copySearch(this)" data-query="property management assistant OR coordinator Baltimore OR DC">
+                    <span class="search-query">"property management" assistant OR coordinator Baltimore OR DC</span>
                     <span class="search-copied">Copied</span>
+                    <span class="search-links" onclick="event.stopPropagation()">
+                        <a class="search-link linkedin" href="https://www.linkedin.com/jobs/search/?keywords=%22property+management%22+coordinator&location=Baltimore-Washington+Area" target="_blank" rel="noopener">LinkedIn</a>
+                        <a class="search-link indeed" href="https://www.indeed.com/jobs?q=%22property+management%22+coordinator&l=Baltimore%2C+MD" target="_blank" rel="noopener">Indeed</a>
+                    </span>
                 </div>
-                <div class="search-term" onclick="copySearch(this)">
-                    Sodexo OR Aramark OR "Compass Group" OR Eurest operations Maryland
+                <div class="search-term" onclick="copySearch(this)" data-query="Sodexo OR Aramark OR Compass Group OR Eurest operations Maryland">
+                    <span class="search-query">Sodexo OR Aramark OR "Compass Group" OR Eurest operations Maryland</span>
                     <span class="search-copied">Copied</span>
+                    <span class="search-links" onclick="event.stopPropagation()">
+                        <a class="search-link linkedin" href="https://www.linkedin.com/jobs/search/?keywords=Sodexo+OR+Aramark+OR+%22Compass+Group%22+operations&location=Maryland" target="_blank" rel="noopener">LinkedIn</a>
+                        <a class="search-link indeed" href="https://www.indeed.com/jobs?q=Sodexo+OR+Aramark+OR+%22Compass+Group%22+operations&l=Maryland" target="_blank" rel="noopener">Indeed</a>
+                    </span>
                 </div>
             </div>
         </div>
@@ -1117,13 +1397,26 @@
         <div class="section-inner">
             <p class="section-label">The Roadmap</p>
             <h2 class="section-title">What to do, and when</h2>
-            <p class="section-desc">Not "someday." This week. Here's the exact sequence.</p>
+            <p class="section-desc">Not "someday." This week. Check off each step as you go&mdash;your progress is saved.</p>
+
+            <div class="progress-wrap">
+                <div class="progress-bar-outer">
+                    <div class="progress-bar-inner" id="progressBar"></div>
+                </div>
+                <div class="progress-text">
+                    <span class="progress-label">Your progress</span>
+                    <span class="progress-count" id="progressCount">0 of 6 complete</span>
+                </div>
+            </div>
 
             <div class="action-list">
-                <div class="action-item">
-                    <div class="action-timing">
-                        <p class="action-when">This</p>
-                        <p class="action-period">Week</p>
+                <div class="action-item" data-action="0">
+                    <div class="action-timing" style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                        <input type="checkbox" class="action-check" data-action-id="0" onchange="toggleAction(this)">
+                        <div>
+                            <p class="action-when">This</p>
+                            <p class="action-period">Week</p>
+                        </div>
                     </div>
                     <div class="action-content">
                         <h4>Rewrite your LinkedIn &amp; register with staffing agencies</h4>
@@ -1132,10 +1425,13 @@
                     </div>
                 </div>
 
-                <div class="action-item">
-                    <div class="action-timing">
-                        <p class="action-when">Week</p>
-                        <p class="action-period">2</p>
+                <div class="action-item" data-action="1">
+                    <div class="action-timing" style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                        <input type="checkbox" class="action-check" data-action-id="1" onchange="toggleAction(this)">
+                        <div>
+                            <p class="action-when">Week</p>
+                            <p class="action-period">2</p>
+                        </div>
                     </div>
                     <div class="action-content">
                         <h4>Start networking &amp; identify 10 target contacts</h4>
@@ -1144,10 +1440,13 @@
                     </div>
                 </div>
 
-                <div class="action-item">
-                    <div class="action-timing">
-                        <p class="action-when">Week</p>
-                        <p class="action-period">2&ndash;3</p>
+                <div class="action-item" data-action="2">
+                    <div class="action-timing" style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                        <input type="checkbox" class="action-check" data-action-id="2" onchange="toggleAction(this)">
+                        <div>
+                            <p class="action-when">Week</p>
+                            <p class="action-period">2&ndash;3</p>
+                        </div>
                     </div>
                     <div class="action-content">
                         <h4>Get OSHA 30-Hour certified</h4>
@@ -1156,10 +1455,13 @@
                     </div>
                 </div>
 
-                <div class="action-item">
-                    <div class="action-timing">
-                        <p class="action-when">Week</p>
-                        <p class="action-period">3+</p>
+                <div class="action-item" data-action="3">
+                    <div class="action-timing" style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                        <input type="checkbox" class="action-check" data-action-id="3" onchange="toggleAction(this)">
+                        <div>
+                            <p class="action-when">Week</p>
+                            <p class="action-period">3+</p>
+                        </div>
                     </div>
                     <div class="action-content">
                         <h4>Apply to 3&ndash;5 tailored roles per week</h4>
@@ -1168,10 +1470,13 @@
                     </div>
                 </div>
 
-                <div class="action-item">
-                    <div class="action-timing">
-                        <p class="action-when">Month</p>
-                        <p class="action-period">1&ndash;2</p>
+                <div class="action-item" data-action="4">
+                    <div class="action-timing" style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                        <input type="checkbox" class="action-check" data-action-id="4" onchange="toggleAction(this)">
+                        <div>
+                            <p class="action-when">Month</p>
+                            <p class="action-period">1&ndash;2</p>
+                        </div>
                     </div>
                     <div class="action-content">
                         <h4>Start CAPM prep (while applying)</h4>
@@ -1180,10 +1485,13 @@
                     </div>
                 </div>
 
-                <div class="action-item">
-                    <div class="action-timing">
-                        <p class="action-when">Month</p>
-                        <p class="action-period">3&ndash;6</p>
+                <div class="action-item" data-action="5">
+                    <div class="action-timing" style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                        <input type="checkbox" class="action-check" data-action-id="5" onchange="toggleAction(this)">
+                        <div>
+                            <p class="action-when">Month</p>
+                            <p class="action-period">3&ndash;6</p>
+                        </div>
                     </div>
                     <div class="action-content">
                         <h4>Six Sigma Green Belt (after landing first role)</h4>
@@ -1209,10 +1517,11 @@
     </footer>
 
     <script>
+        // PASSWORD GATE
         function checkPw(e) {
             e.preventDefault();
             var input = document.getElementById('pwInput');
-            if (input.value === 'alex22026') {
+            if (input.value === 'alex2026') {
                 document.getElementById('pwGate').classList.add('unlocked');
                 sessionStorage.setItem('career_unlocked', '1');
             } else {
@@ -1222,18 +1531,97 @@
             }
             return false;
         }
-        // Remember unlock for this tab session
         if (sessionStorage.getItem('career_unlocked') === '1') {
             document.getElementById('pwGate').classList.add('unlocked');
         }
 
+        // COLLAPSIBLE SECTIONS
+        function toggleSection(header) {
+            var section = header.closest('[data-collapsible]');
+            section.classList.toggle('section-collapsed');
+        }
+
+        // COPY SEARCH TERM
         function copySearch(el) {
-            const text = el.childNodes[0].textContent.trim();
-            navigator.clipboard.writeText(text).then(() => {
+            var query = el.getAttribute('data-query') || el.querySelector('.search-query').textContent.trim();
+            navigator.clipboard.writeText(query).then(function() {
                 el.classList.add('copied');
-                setTimeout(() => el.classList.remove('copied'), 2000);
+                setTimeout(function() { el.classList.remove('copied'); }, 2000);
             });
         }
+
+        // COPY BLOCK (pitch, LinkedIn headline)
+        function copyBlock(elementId, btn) {
+            var el = document.getElementById(elementId);
+            var text = el.textContent.replace(/\s+/g, ' ').trim();
+            // Remove the "Memorize this" label from pitch
+            text = text.replace(/^Memorize this\s*/, '');
+            navigator.clipboard.writeText(text).then(function() {
+                var label = btn.querySelector('span');
+                label.textContent = 'Copied!';
+                btn.classList.add('copied');
+                setTimeout(function() {
+                    label.textContent = 'Copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        // ACTION PLAN CHECKBOXES + PROGRESS
+        var TOTAL_ACTIONS = 6;
+
+        function getActionState() {
+            try {
+                return JSON.parse(localStorage.getItem('alex_actions') || '{}');
+            } catch(e) { return {}; }
+        }
+
+        function saveActionState(state) {
+            localStorage.setItem('alex_actions', JSON.stringify(state));
+        }
+
+        function updateProgress() {
+            var state = getActionState();
+            var done = 0;
+            for (var i = 0; i < TOTAL_ACTIONS; i++) {
+                if (state[i]) done++;
+            }
+            var pct = Math.round((done / TOTAL_ACTIONS) * 100);
+            document.getElementById('progressBar').style.width = pct + '%';
+            document.getElementById('progressCount').textContent = done + ' of ' + TOTAL_ACTIONS + ' complete';
+        }
+
+        function toggleAction(checkbox) {
+            var id = checkbox.getAttribute('data-action-id');
+            var item = checkbox.closest('.action-item');
+            var state = getActionState();
+
+            if (checkbox.checked) {
+                state[id] = true;
+                item.classList.add('completed');
+            } else {
+                delete state[id];
+                item.classList.remove('completed');
+            }
+
+            saveActionState(state);
+            updateProgress();
+        }
+
+        // Restore action states on load
+        (function() {
+            var state = getActionState();
+            for (var id in state) {
+                if (state[id]) {
+                    var cb = document.querySelector('[data-action-id="' + id + '"]');
+                    if (cb) {
+                        cb.checked = true;
+                        cb.closest('.action-item').classList.add('completed');
+                    }
+                }
+            }
+            updateProgress();
+        })();
     </script>
 </body>
 </html>
