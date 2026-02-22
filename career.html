@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Operations Career Playbook — Alex G.</title>
+    <meta name="description" content="A personal career roadmap for breaking into corporate operations from hospitality management.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --charcoal: #1c1a17;
+            --charcoal-deep: #111010;
+            --charcoal-mid: #2a2723;
+            --amber: #c4873a;
+            --amber-light: #d4a05e;
+            --amber-deep: #a86d2a;
+            --copper: #b87333;
+            --burgundy: #6b2d3e;
+            --burgundy-light: #8a3d52;
+            --cream: #faf7f2;
+            --cream-warm: #f0ebe2;
+            --ivory: #f5f0e8;
+            --warm-gray: #7a7268;
+            --warm-gray-light: #9a8e82;
+            --slate: #4a443d;
+            --green: #3a6b4a;
+            --green-light: #4a8a5e;
+            --blue: #3a5a7a;
+            --blue-light: #5a7a9a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--cream);
+            color: var(--charcoal);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 1rem 2rem;
+            background: rgba(250, 247, 242, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 rgba(28, 26, 23, 0.08);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem; font-weight: 500;
+            color: var(--charcoal); letter-spacing: 0.04em;
+            text-decoration: none;
+        }
+
+        .nav-back {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em;
+            text-transform: uppercase; text-decoration: none;
+            color: var(--warm-gray); transition: color 0.3s;
+        }
+        .nav-back:hover { color: var(--charcoal); }
+        .nav-back svg { width: 14px; height: 14px; }
+
+        /* HERO */
+        .hero {
+            padding: 8rem 2rem 4rem;
+            background: linear-gradient(135deg, var(--charcoal-deep) 0%, var(--charcoal) 40%, var(--charcoal-mid) 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse 70% 60% at 60% 50%, rgba(58, 106, 74, 0.1) 0%, transparent 70%);
+        }
+
+        .hero-inner {
+            max-width: 900px; margin: 0 auto; position: relative; z-index: 2;
+        }
+
+        .hero-private {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.4rem 0.9rem; border-radius: 100px;
+            background: rgba(58, 106, 74, 0.15); border: 1px solid rgba(58, 106, 74, 0.3);
+            font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em;
+            text-transform: uppercase; color: #7ab88a; margin-bottom: 1.5rem;
+        }
+
+        .hero-private svg { width: 12px; height: 12px; }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 300; color: var(--cream); line-height: 1.1;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero h1 em { font-style: italic; color: var(--amber-light); }
+
+        .hero-sub {
+            font-size: 1.15rem; font-weight: 300;
+            color: var(--warm-gray-light); max-width: 650px;
+            line-height: 1.8; margin-bottom: 2rem;
+        }
+
+        .hero-tldr {
+            padding: 1.5rem 2rem;
+            background: rgba(196, 135, 58, 0.08);
+            border-left: 3px solid var(--amber);
+            border-radius: 0 4px 4px 0;
+        }
+
+        .hero-tldr p {
+            font-size: 0.95rem; color: var(--cream-warm); line-height: 1.8;
+        }
+
+        .hero-tldr strong { color: var(--amber-light); }
+
+        /* SECTIONS */
+        section { padding: 5rem 2rem; }
+        .section-inner { max-width: 900px; margin: 0 auto; }
+
+        .section-label {
+            font-size: 0.7rem; font-weight: 500; letter-spacing: 0.25em;
+            text-transform: uppercase; color: var(--amber); margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 400; color: var(--charcoal); line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .section-desc {
+            font-size: 1rem; color: var(--warm-gray); line-height: 1.8;
+            max-width: 700px; margin-bottom: 2.5rem;
+        }
+
+        /* ALTERNATING BACKGROUNDS */
+        .bg-cream { background: var(--cream); }
+        .bg-ivory { background: var(--ivory); }
+        .bg-dark {
+            background: linear-gradient(135deg, var(--charcoal) 0%, var(--charcoal-deep) 100%);
+        }
+
+        /* TRANSLATION TABLE */
+        .translation-grid {
+            display: flex; flex-direction: column; gap: 1rem;
+        }
+
+        .translation-row {
+            display: grid; grid-template-columns: 1fr 40px 1fr; gap: 0;
+            align-items: stretch; border-radius: 4px; overflow: hidden;
+            border: 1px solid rgba(28, 26, 23, 0.06);
+        }
+
+        .translation-before {
+            padding: 1.25rem 1.5rem;
+            background: var(--cream-warm);
+            font-size: 0.88rem; color: var(--warm-gray); line-height: 1.6;
+        }
+
+        .translation-arrow {
+            display: flex; align-items: center; justify-content: center;
+            background: var(--amber); color: white; font-size: 1rem;
+        }
+
+        .translation-after {
+            padding: 1.25rem 1.5rem;
+            background: var(--cream);
+            font-size: 0.88rem; color: var(--charcoal); line-height: 1.6;
+            font-weight: 500;
+        }
+
+        /* TIER CARDS */
+        .tier { margin-bottom: 2.5rem; }
+
+        .tier-header {
+            display: flex; align-items: center; gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .tier-badge {
+            padding: 0.35rem 0.9rem; border-radius: 100px;
+            font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em;
+            text-transform: uppercase; white-space: nowrap;
+        }
+
+        .tier-badge.now { background: var(--green); color: white; }
+        .tier-badge.stretch { background: var(--amber); color: white; }
+        .tier-badge.future { background: var(--burgundy); color: white; }
+
+        .tier-label {
+            font-size: 0.85rem; color: var(--warm-gray); font-weight: 400;
+        }
+
+        .role-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+        }
+
+        .role-card {
+            padding: 1.5rem;
+            background: var(--cream);
+            border: 1px solid rgba(28, 26, 23, 0.06);
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .role-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(28, 26, 23, 0.06);
+        }
+
+        .role-card h4 {
+            font-size: 1.1rem; font-weight: 500; color: var(--charcoal);
+            margin-bottom: 0.35rem;
+        }
+
+        .role-card .role-salary {
+            font-size: 0.82rem; font-weight: 600; color: var(--green);
+            margin-bottom: 0.5rem;
+        }
+
+        .role-card p {
+            font-size: 0.82rem; color: var(--warm-gray); line-height: 1.6;
+        }
+
+        /* SALARY TRAJECTORY */
+        .trajectory {
+            display: flex; gap: 0; margin: 2rem 0;
+            border-radius: 4px; overflow: hidden;
+        }
+
+        .trajectory-step {
+            flex: 1; padding: 1.5rem;
+            text-align: center; position: relative;
+        }
+
+        .trajectory-step:nth-child(1) { background: var(--charcoal); }
+        .trajectory-step:nth-child(2) { background: var(--amber-deep); }
+        .trajectory-step:nth-child(3) { background: var(--green); }
+
+        .trajectory-step::after {
+            content: '';
+            position: absolute; right: -12px; top: 50%; transform: translateY(-50%);
+            width: 0; height: 0;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            z-index: 2;
+        }
+
+        .trajectory-step:nth-child(1)::after { border-left: 12px solid var(--charcoal); }
+        .trajectory-step:nth-child(2)::after { border-left: 12px solid var(--amber-deep); }
+
+        .trajectory-year {
+            font-size: 0.65rem; font-weight: 500; letter-spacing: 0.15em;
+            text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 0.5rem;
+        }
+
+        .trajectory-amount {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem; font-weight: 400; color: white; line-height: 1;
+            margin-bottom: 0.25rem;
+        }
+
+        .trajectory-title {
+            font-size: 0.72rem; color: rgba(255,255,255,0.7);
+        }
+
+        /* CERT CARDS */
+        .cert-grid {
+            display: flex; flex-direction: column; gap: 1.25rem;
+        }
+
+        .cert-card {
+            display: grid; grid-template-columns: auto 1fr auto;
+            gap: 1.5rem; align-items: center;
+            padding: 2rem; background: var(--cream);
+            border: 1px solid rgba(28, 26, 23, 0.06);
+            border-radius: 4px;
+        }
+
+        .cert-rank {
+            width: 48px; height: 48px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Cormorant Garamond', serif; font-size: 1.4rem;
+            font-weight: 500; color: white;
+        }
+
+        .cert-rank.r1 { background: var(--green); }
+        .cert-rank.r2 { background: var(--amber); }
+        .cert-rank.r3 { background: var(--blue); }
+        .cert-rank.r4 { background: var(--slate); }
+
+        .cert-info h4 {
+            font-size: 1.15rem; font-weight: 500; color: var(--charcoal);
+            margin-bottom: 0.25rem;
+        }
+
+        .cert-info p {
+            font-size: 0.85rem; color: var(--warm-gray); line-height: 1.6;
+        }
+
+        .cert-meta {
+            text-align: right; white-space: nowrap;
+        }
+
+        .cert-cost {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem; font-weight: 500; color: var(--charcoal);
+            line-height: 1;
+        }
+
+        .cert-time {
+            font-size: 0.72rem; color: var(--warm-gray); margin-top: 0.25rem;
+        }
+
+        /* PITCH BOX */
+        .pitch-box {
+            padding: 2.5rem;
+            background: var(--charcoal);
+            border-radius: 4px;
+            position: relative;
+            margin-top: 2rem;
+        }
+
+        .pitch-box::before {
+            content: '\201C';
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 6rem; color: var(--amber); opacity: 0.15;
+            position: absolute; top: 0.25rem; left: 1.5rem; line-height: 1;
+        }
+
+        .pitch-box p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem; font-style: italic;
+            color: var(--cream); line-height: 1.7;
+            position: relative;
+        }
+
+        .pitch-label {
+            font-family: 'Outfit', sans-serif !important;
+            font-size: 0.65rem !important; font-style: normal !important;
+            font-weight: 500 !important; letter-spacing: 0.15em;
+            text-transform: uppercase; color: var(--amber) !important;
+            display: block; margin-bottom: 1rem;
+        }
+
+        /* SEARCH TERMS */
+        .search-terms {
+            display: flex; flex-direction: column; gap: 0.6rem;
+            margin-top: 1.5rem;
+        }
+
+        .search-term {
+            display: flex; align-items: center; gap: 0.75rem;
+            padding: 0.75rem 1.25rem;
+            background: var(--cream);
+            border: 1px solid rgba(28, 26, 23, 0.06);
+            border-radius: 4px;
+            font-family: 'Outfit', monospace;
+            font-size: 0.82rem; color: var(--charcoal);
+            cursor: pointer; transition: all 0.3s;
+            position: relative;
+        }
+
+        .search-term:hover {
+            background: var(--cream-warm);
+            border-color: var(--amber);
+        }
+
+        .search-term::before {
+            content: '';
+            width: 16px; height: 16px; flex-shrink: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239a8e82' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='M21 21l-4.35-4.35'/%3E%3C/svg%3E");
+        }
+
+        .search-copied {
+            position: absolute; right: 1rem;
+            font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em;
+            text-transform: uppercase; color: var(--green);
+            opacity: 0; transition: opacity 0.3s;
+        }
+
+        .search-term.copied .search-copied { opacity: 1; }
+
+        /* ACTION PLAN */
+        .action-list {
+            display: flex; flex-direction: column; gap: 0;
+            counter-reset: action;
+        }
+
+        .action-item {
+            display: grid; grid-template-columns: 80px 1fr; gap: 1.5rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid rgba(28, 26, 23, 0.06);
+            counter-increment: action;
+        }
+
+        .action-timing {
+            text-align: center;
+        }
+
+        .action-when {
+            font-size: 0.65rem; font-weight: 500; letter-spacing: 0.12em;
+            text-transform: uppercase; color: var(--warm-gray-light);
+            margin-bottom: 0.25rem;
+        }
+
+        .action-period {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem; font-weight: 500; color: var(--charcoal);
+        }
+
+        .action-content h4 {
+            font-size: 1.1rem; font-weight: 500; color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+
+        .action-content p {
+            font-size: 0.88rem; color: var(--warm-gray); line-height: 1.7;
+        }
+
+        .action-tag {
+            display: inline-block; margin-top: 0.5rem;
+            padding: 0.25rem 0.6rem; border-radius: 3px;
+            font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .action-tag.free { background: rgba(58, 106, 74, 0.1); color: var(--green); }
+        .action-tag.invest { background: rgba(196, 135, 58, 0.1); color: var(--amber-deep); }
+
+        /* TARGET COMPANIES */
+        .company-section { margin-bottom: 2rem; }
+
+        .company-section h3 {
+            font-size: 1.2rem; font-weight: 500; color: var(--charcoal);
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(28, 26, 23, 0.08);
+        }
+
+        .company-list {
+            display: flex; flex-wrap: wrap; gap: 0.5rem;
+        }
+
+        .company-tag {
+            padding: 0.45rem 1rem;
+            font-size: 0.8rem; font-weight: 400;
+            border-radius: 100px;
+            background: var(--cream);
+            border: 1px solid rgba(28, 26, 23, 0.08);
+            color: var(--charcoal);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--charcoal-deep);
+            padding: 2.5rem 2rem; text-align: center;
+        }
+
+        footer p {
+            font-size: 0.75rem; color: var(--slate); letter-spacing: 0.1em;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            section { padding: 4rem 1.5rem; }
+            .hero { padding: 7rem 1.5rem 3rem; }
+            .role-grid { grid-template-columns: 1fr; }
+            .translation-row { grid-template-columns: 1fr; }
+            .translation-arrow {
+                height: 32px;
+                transform: rotate(90deg);
+                justify-self: center;
+            }
+            .trajectory { flex-direction: column; }
+            .trajectory-step::after { display: none; }
+            .cert-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .cert-rank { margin: 0 auto; }
+            .cert-meta { text-align: center; }
+            .action-item { grid-template-columns: 1fr; gap: 0.75rem; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2.2rem; }
+            nav { padding: 0.75rem 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <span class="nav-logo">Alex's Playbook</span>
+        <a href="index.html" class="nav-back">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            Back to Site
+        </a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-private">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                Personal Playbook &mdash; Not Public
+            </div>
+            <h1>Your path from<br>hospitality to <em>operations</em></h1>
+            <p class="hero-sub">You've spent 20 years managing complex operations&mdash;you just called it "running a restaurant." Here's how to translate what you already know into the corporate world, and exactly where to point yourself.</p>
+
+            <div class="hero-tldr">
+                <p><strong>The short version:</strong> You're not starting over. You're <em>translating</em>. Vendor management, multi-site logistics, team leadership, regulatory compliance, budget control&mdash;you've been doing operations your entire career. The corporate world just uses different words for it.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT OPS ACTUALLY IS -->
+    <section class="bg-cream">
+        <div class="section-inner">
+            <p class="section-label">The Big Picture</p>
+            <h2 class="section-title">What "Operations" actually means</h2>
+            <p class="section-desc">You said you don't know what ops is "besides essentially middle management." Here's the real answer&mdash;it's broader than you think, and it's exactly what you're built for.</p>
+
+            <div style="font-size: 0.95rem; color: var(--warm-gray); line-height: 1.9; max-width: 750px;">
+                <p style="margin-bottom: 1.25rem;"><strong style="color: var(--charcoal);">Operations is the engine room of any company.</strong> It's the systems, processes, and people that make a business actually function day-to-day. Every company has operations&mdash;the question is just what they're operating.</p>
+
+                <p style="margin-bottom: 1.25rem;">In a hospital, ops means making sure supplies are stocked, rooms are clean, staff are scheduled, and vendors are delivering. In a property management company, it means keeping buildings running, coordinating maintenance crews, managing tenant requests, and controlling budgets. In a logistics company, it means making sure things get from Point A to Point B, on time, without breaking.</p>
+
+                <p style="margin-bottom: 1.25rem;"><strong style="color: var(--charcoal);">What all ops roles have in common:</strong> You're the person who makes things run smoothly. You coordinate between departments. You solve problems before they blow up. You manage vendors and budgets. You keep teams organized and productive.</p>
+
+                <p><strong style="color: var(--charcoal);">Sound familiar?</strong> That's because you've been doing this for 20 years. You just did it in kitchens and dining rooms instead of corporate offices.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS TRANSLATION -->
+    <section class="bg-ivory">
+        <div class="section-inner">
+            <p class="section-label">Your Secret Weapon</p>
+            <h2 class="section-title">Same skills, different words</h2>
+            <p class="section-desc">The hiring manager won't connect the dots&mdash;you have to do it for them. Here's how to translate what you've done into language that gets you interviews.</p>
+
+            <div class="translation-grid">
+                <div class="translation-row">
+                    <div class="translation-before">Managed popup dining across 5 corporate locations</div>
+                    <div class="translation-arrow">&rarr;</div>
+                    <div class="translation-after">Directed multi-site operations across 5 locations, coordinating logistics, staffing, and service delivery</div>
+                </div>
+                <div class="translation-row">
+                    <div class="translation-before">Coordinated with 15+ restaurant vendors weekly</div>
+                    <div class="translation-arrow">&rarr;</div>
+                    <div class="translation-after">Managed vendor relationships for 15+ suppliers, including contract compliance and quality assurance</div>
+                </div>
+                <div class="translation-row">
+                    <div class="translation-before">Ran kitchens with 10-20 staff across shifts</div>
+                    <div class="translation-arrow">&rarr;</div>
+                    <div class="translation-after">Managed cross-functional teams of 10-20, including hiring, scheduling, training, and performance management</div>
+                </div>
+                <div class="translation-row">
+                    <div class="translation-before">Kept food costs at or under budget</div>
+                    <div class="translation-arrow">&rarr;</div>
+                    <div class="translation-after">P&amp;L accountability&mdash;maintained operational budgets and achieved cost reduction through vendor negotiation</div>
+                </div>
+                <div class="translation-row">
+                    <div class="translation-before">Handled health inspections and food safety</div>
+                    <div class="translation-arrow">&rarr;</div>
+                    <div class="translation-after">Ensured regulatory compliance across multiple sites, maintaining 100% pass rate on external audits</div>
+                </div>
+                <div class="translation-row">
+                    <div class="translation-before">Scheduled staff across shifts and locations</div>
+                    <div class="translation-arrow">&rarr;</div>
+                    <div class="translation-after">Workforce planning and scheduling across multiple sites, optimizing coverage and labor costs</div>
+                </div>
+                <div class="translation-row">
+                    <div class="translation-before">Bilingual English/Spanish, native both</div>
+                    <div class="translation-arrow">&rarr;</div>
+                    <div class="translation-after">Bilingual operations leadership&mdash;managed diverse, multilingual teams and vendor relationships in English and Spanish</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE ELEVATOR PITCH -->
+    <section class="bg-cream">
+        <div class="section-inner">
+            <p class="section-label">How to Talk About Yourself</p>
+            <h2 class="section-title">Your 30-second pitch</h2>
+            <p class="section-desc">When someone asks "so what do you do?" or "tell me about yourself"&mdash;this is what you say. Notice: no mention of food, restaurants, or hospitality in the opening.</p>
+
+            <div class="pitch-box">
+                <p>
+                    <span class="pitch-label">Memorize this</span>
+                    I've spent 20 years managing complex operations&mdash;coordinating vendors, running multi-site programs, managing teams, and keeping budgets on track. Most recently I've been running popup dining programs across multiple corporate locations, which is really logistics and program management. I'm looking to bring that operational discipline into a corporate operations or facilities role. I'm also fully bilingual in English and Spanish, which has been a real asset managing diverse teams and vendor relationships.
+                </p>
+            </div>
+
+            <div style="margin-top: 2rem; padding: 1.5rem 2rem; background: var(--ivory); border-radius: 4px;">
+                <p style="font-size: 0.85rem; color: var(--warm-gray); line-height: 1.7; margin-bottom: 0.75rem;"><strong style="color: var(--charcoal);">Your LinkedIn headline should be:</strong></p>
+                <p style="font-size: 1rem; color: var(--charcoal); font-weight: 500;">Operations & Logistics Leader | 20+ Years Multi-Site Management | Vendor Relations | Bilingual EN/ES</p>
+                <p style="font-size: 0.78rem; color: var(--warm-gray); margin-top: 0.5rem;">Not "Restaurant Manager looking for new opportunities." That screams "I can't translate my skills."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROLES TO TARGET -->
+    <section class="bg-ivory">
+        <div class="section-inner">
+            <p class="section-label">Where to Aim</p>
+            <h2 class="section-title">Job titles to target</h2>
+            <p class="section-desc">Three tiers: what you can apply for right now, what's a stretch, and where you'll be in 1-2 years with one certification under your belt.</p>
+
+            <!-- Tier 1 -->
+            <div class="tier">
+                <div class="tier-header">
+                    <span class="tier-badge now">Apply Now</span>
+                    <span class="tier-label">You're qualified for these today</span>
+                </div>
+                <div class="role-grid">
+                    <div class="role-card">
+                        <h4>Facilities Operations Coordinator</h4>
+                        <p class="role-salary">$60K&ndash;$75K (Balt) &bull; $82K&ndash;$107K (DC)</p>
+                        <p>Multi-site oversight, vendor coordination, scheduling. This is what you do now with popup programs&mdash;just different product.</p>
+                    </div>
+                    <div class="role-card">
+                        <h4>Vendor Management Coordinator</h4>
+                        <p class="role-salary">$55K&ndash;$70K</p>
+                        <p>You manage 15+ vendors weekly already. This IS the job title for what you do.</p>
+                    </div>
+                    <div class="role-card">
+                        <h4>Logistics Coordinator</h4>
+                        <p class="role-salary">$45K&ndash;$68K (Balt) &bull; $60K&ndash;$96K (DC)</p>
+                        <p>Scheduling, supply chain, delivery coordination. Popup dining is logistics&mdash;you've just never called it that.</p>
+                    </div>
+                    <div class="role-card">
+                        <h4>Site Operations Coordinator</h4>
+                        <p class="role-salary">$50K&ndash;$80K</p>
+                        <p>Managing day-to-day operations at a physical location. Your entire career in one job title.</p>
+                    </div>
+                    <div class="role-card">
+                        <h4>Property Mgmt Coordinator</h4>
+                        <p class="role-salary">$45K&ndash;$65K (Balt) &bull; $55K&ndash;$75K (DC)</p>
+                        <p>Multi-site oversight, tenant relations, vendor coordination, maintenance scheduling. Huge market in DC.</p>
+                    </div>
+                    <div class="role-card">
+                        <h4>Healthcare Ops Coordinator</h4>
+                        <p class="role-salary">$55K&ndash;$75K</p>
+                        <p>Hospitals run massive logistics ops. Johns Hopkins and MedStar actively hire from hospitality backgrounds.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tier 2 -->
+            <div class="tier">
+                <div class="tier-header">
+                    <span class="tier-badge stretch">Stretch</span>
+                    <span class="tier-label">Apply selectively, tailor resume hard</span>
+                </div>
+                <div class="role-grid">
+                    <div class="role-card">
+                        <h4>Operations Manager (Facilities)</h4>
+                        <p class="role-salary">$70K&ndash;$95K (Balt) &bull; $85K&ndash;$120K (DC)</p>
+                        <p>Same skills, but "Manager" title usually wants corporate ops on paper. Frame your multi-site popup work aggressively.</p>
+                    </div>
+                    <div class="role-card">
+                        <h4>Event Operations Manager</h4>
+                        <p class="role-salary">$60K&ndash;$90K</p>
+                        <p>Corporate event companies value hospitality background. Closest "feel" to what you know, but M-F schedule.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tier 3 -->
+            <div class="tier">
+                <div class="tier-header">
+                    <span class="tier-badge future">12&ndash;24 Months</span>
+                    <span class="tier-label">After one certification + corporate experience</span>
+                </div>
+                <div class="role-grid">
+                    <div class="role-card">
+                        <h4>Regional Operations Manager</h4>
+                        <p class="role-salary">$85K&ndash;$120K</p>
+                        <p>Needs 1-2 years corporate ops + CAPM or Six Sigma certification.</p>
+                    </div>
+                    <div class="role-card">
+                        <h4>Facilities Manager</h4>
+                        <p class="role-salary">$80K&ndash;$110K (Balt) &bull; $95K&ndash;$130K (DC)</p>
+                        <p>Needs FMP certification + 1-2 years in facilities coordination. This is the money lane.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Salary Trajectory -->
+            <h3 style="font-size: 1.3rem; font-weight: 500; color: var(--charcoal); margin-top: 3rem; margin-bottom: 0.5rem;">The money trajectory</h3>
+            <p style="font-size: 0.85rem; color: var(--warm-gray); margin-bottom: 1rem;">Bilingual Spanish roles in DC command a 5-15% premium. This is real money.</p>
+
+            <div class="trajectory">
+                <div class="trajectory-step">
+                    <p class="trajectory-year">Entry</p>
+                    <p class="trajectory-amount">$55&ndash;70K</p>
+                    <p class="trajectory-title">Coordinator role</p>
+                </div>
+                <div class="trajectory-step">
+                    <p class="trajectory-year">Year 1&ndash;2</p>
+                    <p class="trajectory-amount">$70&ndash;90K</p>
+                    <p class="trajectory-title">With one cert</p>
+                </div>
+                <div class="trajectory-step">
+                    <p class="trajectory-year">Year 3&ndash;5</p>
+                    <p class="trajectory-amount">$90&ndash;120K</p>
+                    <p class="trajectory-title">Manager / Regional</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="bg-cream">
+        <div class="section-inner">
+            <p class="section-label">Level Up</p>
+            <h2 class="section-title">Certifications that move the needle</h2>
+            <p class="section-desc">Ranked by bang-for-your-buck for someone in your exact situation. You don't need all of them&mdash;start with #1 and #4.</p>
+
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-rank r1">1</div>
+                    <div class="cert-info">
+                        <h4>CAPM &mdash; Certified Associate in Project Management</h4>
+                        <p>The single highest-ROI credential for your situation. Every ops role involves project management. CAPM signals you speak the corporate language. It's the entry-level PMP&mdash;you can get it NOW with self-study. Requires 23 hours of PM education (free/cheap online).</p>
+                    </div>
+                    <div class="cert-meta">
+                        <p class="cert-cost">~$500</p>
+                        <p class="cert-time">1&ndash;2 months</p>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-rank r2">2</div>
+                    <div class="cert-info">
+                        <h4>Lean Six Sigma Green Belt</h4>
+                        <p>Process improvement and efficiency&mdash;your hospitality work IS this (optimizing kitchen flow, reducing waste, streamlining deliveries). Green Belt on a resume says "I can optimize your operations systematically." Meaningful salary bump.</p>
+                    </div>
+                    <div class="cert-meta">
+                        <p class="cert-cost">~$400</p>
+                        <p class="cert-time">2&ndash;4 weeks</p>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-rank r3">3</div>
+                    <div class="cert-info">
+                        <h4>FMP &mdash; Facility Management Professional</h4>
+                        <p>Entry-level credential for facilities management, designed for career transitioners. If you want the facilities route ($95K-$130K in DC), this opens the door. Stepping stone to CFM later.</p>
+                    </div>
+                    <div class="cert-meta">
+                        <p class="cert-cost">~$1,700</p>
+                        <p class="cert-time">3&ndash;6 months</p>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-rank r4">4</div>
+                    <div class="cert-info">
+                        <h4>OSHA 30-Hour General Industry</h4>
+                        <p>Cheap, fast, and signals safety awareness. Required or preferred for many facilities and ops roles. Stack this with your food services cert. Good "quick win" to add to resume while studying for CAPM.</p>
+                    </div>
+                    <div class="cert-meta">
+                        <p class="cert-cost">~$175</p>
+                        <p class="cert-time">1&ndash;2 weeks</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 1.5rem; padding: 1.25rem 1.5rem; background: var(--ivory); border-radius: 4px;">
+                <p style="font-size: 0.82rem; color: var(--warm-gray); line-height: 1.6;"><strong style="color: var(--charcoal);">What you already have:</strong> Your Food Services Manager Certification is valuable&mdash;don't hide it. Translate it as "regulatory compliance and operational safety certification." Compass Group, Sodexo, Aramark, and hospitals recognize it.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TARGET COMPANIES -->
+    <section class="bg-ivory">
+        <div class="section-inner">
+            <p class="section-label">Where to Look</p>
+            <h2 class="section-title">Companies hiring in DC-Baltimore</h2>
+            <p class="section-desc">These companies specifically value your background. Start with the first two categories&mdash;they're the easiest lateral moves.</p>
+
+            <div class="company-section">
+                <h3>Contract Services &amp; Facilities (Nearest Move)</h3>
+                <div class="company-list">
+                    <span class="company-tag">Compass Group (Eurest, Chartwells, Levy)</span>
+                    <span class="company-tag">Sodexo</span>
+                    <span class="company-tag">Aramark</span>
+                    <span class="company-tag">Delaware North</span>
+                </div>
+            </div>
+
+            <div class="company-section">
+                <h3>Property Management (Strong Fit)</h3>
+                <div class="company-list">
+                    <span class="company-tag">Bozzuto (Greenbelt)</span>
+                    <span class="company-tag">Greystar</span>
+                    <span class="company-tag">Lincoln Property Co</span>
+                    <span class="company-tag">LIVEbe Communities</span>
+                    <span class="company-tag">Humphrey Mgmt (Columbia)</span>
+                </div>
+            </div>
+
+            <div class="company-section">
+                <h3>Healthcare Operations</h3>
+                <div class="company-list">
+                    <span class="company-tag">Johns Hopkins (Baltimore)</span>
+                    <span class="company-tag">MedStar Health</span>
+                    <span class="company-tag">UMD Medical System</span>
+                    <span class="company-tag">Adventist Healthcare (Silver Spring)</span>
+                </div>
+            </div>
+
+            <div class="company-section">
+                <h3>Logistics &amp; Distribution</h3>
+                <div class="company-list">
+                    <span class="company-tag">Amazon (BWI)</span>
+                    <span class="company-tag">Sysco (Columbia)</span>
+                    <span class="company-tag">US Foods</span>
+                    <span class="company-tag">XPO Logistics</span>
+                </div>
+            </div>
+
+            <div class="company-section">
+                <h3>Building &amp; Facilities Services</h3>
+                <div class="company-list">
+                    <span class="company-tag">ABM Industries</span>
+                    <span class="company-tag">JLL (Jones Lang LaSalle)</span>
+                    <span class="company-tag">CBRE</span>
+                    <span class="company-tag">Cushman & Wakefield</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEARCH TERMS -->
+    <section class="bg-cream">
+        <div class="section-inner">
+            <p class="section-label">Copy &amp; Paste</p>
+            <h2 class="section-title">Exact search terms for LinkedIn &amp; Indeed</h2>
+            <p class="section-desc">Don't just search "operations jobs." Use these specific queries. Click to copy.</p>
+
+            <div class="search-terms">
+                <div class="search-term" onclick="copySearch(this)">
+                    "operations coordinator" NOT IT NOT software
+                    <span class="search-copied">Copied</span>
+                </div>
+                <div class="search-term" onclick="copySearch(this)">
+                    "facilities coordinator" -engineering
+                    <span class="search-copied">Copied</span>
+                </div>
+                <div class="search-term" onclick="copySearch(this)">
+                    "vendor management" coordinator
+                    <span class="search-copied">Copied</span>
+                </div>
+                <div class="search-term" onclick="copySearch(this)">
+                    "multi-site" operations manager Maryland
+                    <span class="search-copied">Copied</span>
+                </div>
+                <div class="search-term" onclick="copySearch(this)">
+                    "logistics coordinator" -CDL -driver Baltimore OR DC
+                    <span class="search-copied">Copied</span>
+                </div>
+                <div class="search-term" onclick="copySearch(this)">
+                    "bilingual Spanish" operations coordinator DC
+                    <span class="search-copied">Copied</span>
+                </div>
+                <div class="search-term" onclick="copySearch(this)">
+                    "property management" assistant OR coordinator Baltimore OR DC
+                    <span class="search-copied">Copied</span>
+                </div>
+                <div class="search-term" onclick="copySearch(this)">
+                    Sodexo OR Aramark OR "Compass Group" operations Maryland
+                    <span class="search-copied">Copied</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACTION PLAN -->
+    <section class="bg-ivory">
+        <div class="section-inner">
+            <p class="section-label">The Roadmap</p>
+            <h2 class="section-title">What to do, and when</h2>
+            <p class="section-desc">Not "someday." This week. Here's the exact sequence.</p>
+
+            <div class="action-list">
+                <div class="action-item">
+                    <div class="action-timing">
+                        <p class="action-when">This</p>
+                        <p class="action-period">Week</p>
+                    </div>
+                    <div class="action-content">
+                        <h4>Rewrite your LinkedIn</h4>
+                        <p>Change your headline and summary using the corporate language from the translation table above. Remove "restaurant" and "hospitality" from your headline entirely. Use the exact headline and pitch we wrote for you.</p>
+                        <span class="action-tag free">Free</span>
+                    </div>
+                </div>
+
+                <div class="action-item">
+                    <div class="action-timing">
+                        <p class="action-when">This</p>
+                        <p class="action-period">Week</p>
+                    </div>
+                    <div class="action-content">
+                        <h4>Apply to 5&ndash;10 Tier 1 roles</h4>
+                        <p>Start with Compass Group, Sodexo, Aramark career portals + one property management company. Use the search terms above on LinkedIn. These are the easiest lateral moves&mdash;they already know your world.</p>
+                        <span class="action-tag free">Free</span>
+                    </div>
+                </div>
+
+                <div class="action-item">
+                    <div class="action-timing">
+                        <p class="action-when">This</p>
+                        <p class="action-period">Month</p>
+                    </div>
+                    <div class="action-content">
+                        <h4>Get OSHA 30-Hour certified</h4>
+                        <p>$150&ndash;$200 online. Complete in 1&ndash;2 weeks. Cheapest, fastest credential to add to your resume. Required or preferred for most facilities and ops roles. Do this while you study for CAPM.</p>
+                        <span class="action-tag invest">~$175 investment</span>
+                    </div>
+                </div>
+
+                <div class="action-item">
+                    <div class="action-timing">
+                        <p class="action-when">Month</p>
+                        <p class="action-period">1&ndash;2</p>
+                    </div>
+                    <div class="action-content">
+                        <h4>Start CAPM prep</h4>
+                        <p>This is the single biggest resume upgrade. Register with PMI, find a 23-hour approved course online ($20&ndash;$50 on Udemy), and study for the exam. Total cost ~$500. This cert changes the conversation.</p>
+                        <span class="action-tag invest">~$500 investment</span>
+                    </div>
+                </div>
+
+                <div class="action-item">
+                    <div class="action-timing">
+                        <p class="action-when">Every</p>
+                        <p class="action-period">Week</p>
+                    </div>
+                    <div class="action-content">
+                        <h4>Apply to 5 jobs per week</h4>
+                        <p>Use the exact search terms on this page. Customize for each tier: Tier 1 = emphasize direct ops parallels, Tier 2 = emphasize management scope and scale. Track everything in a spreadsheet.</p>
+                        <span class="action-tag free">Free &mdash; just consistency</span>
+                    </div>
+                </div>
+
+                <div class="action-item">
+                    <div class="action-timing">
+                        <p class="action-when">Month</p>
+                        <p class="action-period">3&ndash;6</p>
+                    </div>
+                    <div class="action-content">
+                        <h4>Six Sigma Green Belt</h4>
+                        <p>After landing a Tier 1 role. $300&ndash;$450. 2&ndash;4 weeks. This positions you for Tier 3 roles ($85K&ndash;$120K) within 12&ndash;18 months of your first corporate ops job.</p>
+                        <span class="action-tag invest">~$400 investment</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL NOTE -->
+    <section class="bg-dark" style="padding: 5rem 2rem;">
+        <div class="section-inner" style="text-align: center;">
+            <p class="section-label" style="color: var(--amber-light);">One More Thing</p>
+            <h2 style="font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 300; color: var(--cream); line-height: 1.3; margin-bottom: 1.5rem;">You said you're "utterly lost."<br>You're not lost. You're <em style="color: var(--amber-light);">unlabeled.</em></h2>
+            <p style="font-size: 1.05rem; color: var(--warm-gray-light); max-width: 600px; margin: 0 auto; line-height: 1.8;">You have 20 years of operational excellence. You manage vendors, logistics, teams, budgets, and compliance across multiple sites every day. The corporate world needs exactly this&mdash;they just call it different things. This page gives you the labels. Now go use them.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Built for Alex by Andres &bull; 2026 &bull; Not public &mdash; this is your personal playbook</p>
+    </footer>
+
+    <script>
+        function copySearch(el) {
+            const text = el.childNodes[0].textContent.trim();
+            navigator.clipboard.writeText(text).then(() => {
+                el.classList.add('copied');
+                setTimeout(() => el.classList.remove('copied'), 2000);
+            });
+        }
+    </script>
+</body>
+</html>
